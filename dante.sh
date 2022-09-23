@@ -10,8 +10,8 @@ make install
 cat > /etc/sockd.conf <<EOF
 logoutput: /var/log/socks.log
 
-internal: $ifaceName port = 1080
-external: $ifaceName
+internal: eth0 port = 8128
+external: eth0
 
 socksmethod: username
 
@@ -34,8 +34,8 @@ EOF
 
 /usr/local/sbin/sockd -D &
 
-useradd --shell /usr/sbin/nologin mikrotik999
-echo "oiziq:6Sjn2U+ANt" | chpasswd
+useradd --shell /usr/sbin/nologin oiziq
+echo "oiziq:Bandung12" | chpasswd
 
 cat > /etc/rc.local <<END
 #!/bin/sh
